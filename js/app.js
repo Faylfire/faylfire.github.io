@@ -198,8 +198,10 @@ SelectionBox.prototype.handleInput = function(direction){
             break;
         case 'enter':
             this.character = this.x/101;
+            //console.log("before: "+this.chosen + this.character);
             this.chosen = true;
-            gameState.state = 3;
+            //console.log("after: "+ this.chosen + this.character);
+            //gameState.state = 3;
             break;
         default:
             /* ... */
@@ -265,7 +267,9 @@ document.addEventListener('keydown', function(e) {
 
     console.log(gameState.state);
     if (gameState.state === 0){
+        console.log("selection: "+ allowedKeys[e.keyCode]);
         selection.handleInput(allowedKeys[e.keyCode]);
+
     } else if (gameState.state === 3) {
         player.handleInput(allowedKeys[e.keyCode]);
     }
