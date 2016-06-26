@@ -1,6 +1,6 @@
 //Game State Object
 
-var GameState = function(topScore = [['Boy',100],['Cat Girl',85],['Horn Girl',5]]){
+var GameState = function(topScore = [['Justa Boy',100],['Kitty Chan',85],['Horny Dame',5]]){
     var stateArray = ["Selection", "Win", "Loss", "Play", "Top Score"]
 
     this.state = 0;
@@ -21,11 +21,11 @@ function Comparator(a, b) {
 
 GameState.prototype.update = function() {
     var avatar = [
-                'Boy',   // 1st char
-                'Cat Girl',   // Row 1 of 3 of stone
-                'Horn Girl',   // Row 2 of 3 of stone
-                'Pink Girl',   // Row 3 of 3 of stone
-                'Crown Girl'   // 5th char right-most
+                'Justa Boy',   // 1st char
+                'Kitty Chan',   // Row 1 of 3 of stone
+                'Horny Dame',   // Row 2 of 3 of stone
+                'Pink',   // Row 3 of 3 of stone
+                'Queeny'   // 5th char right-most
             ]
     //this.state = state;
     if (this.state === 2){
