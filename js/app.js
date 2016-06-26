@@ -124,6 +124,11 @@ Player.prototype.update = function(xChange, yChange, avatar) {
     }
 };
 
+Player.prototype.resetPosition = function(){
+    this.x = 101*2;
+    this.y = 83*5-20;
+};
+
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -165,6 +170,12 @@ SelectionBox.prototype.render = function() {
     ctx.lineWidth = 3;
     ctx.strokeStyle = this.color;
     ctx.strokeRect(this.x, this.y, 101, 90);
+};
+
+SelectionBox.prototype.resetPosition = function(){
+    this.x = 101*2;
+    this.y = 83*5-45;
+    this.chosen = false;
 };
 
 SelectionBox.prototype.update = function(xChange) {
@@ -222,12 +233,13 @@ var selection;
 var gameState;
 
 gameState = new GameState();
-
+player = new Player();
+selection = new SelectionBox();
 
 function resetPlayObjects(){
     chooseAvatar = 1;
-    selection = new SelectionBox();
-    player = new Player();
+    selection.resetPosition();
+    player.resetPosition();
     allEnemies = [];
     allBonus = [];
     for (i=0; i < 5; i++){
